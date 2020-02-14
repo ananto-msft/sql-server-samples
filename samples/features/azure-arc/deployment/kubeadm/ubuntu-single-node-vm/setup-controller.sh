@@ -237,7 +237,7 @@ kubectl taint nodes ${master_node} node-role.kubernetes.io/master:NoSchedule-
 
 # Local storage provisioning.
 #
-kubectl apply -f https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/features/azure-arc/deployment/kubeadm/ubuntu/local-storage-provisioner.yaml
+kubectl apply -f https://raw.githubusercontent.com/ananto-msft/sql-server-samples/ananto-pv-fix/samples/features/azure-arc/deployment/kubeadm/ubuntu/local-storage-provisioner.yaml
 
 # Set local-storage as the default storage class
 #
