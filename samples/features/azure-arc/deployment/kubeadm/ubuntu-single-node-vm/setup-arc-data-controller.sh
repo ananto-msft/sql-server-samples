@@ -342,7 +342,7 @@ kubectl config set-context --current --namespace $CLUSTER_NAME
 
 # Login and get endpoint list for the cluster.
 #
-azdata login -n $CLUSTER_NAME
+azdata login --namespace $CLUSTER_NAME
 
 echo "Cluster successfully setup. Run 'azdata --help' to see all available options."
 }| tee $LOG_FILE
