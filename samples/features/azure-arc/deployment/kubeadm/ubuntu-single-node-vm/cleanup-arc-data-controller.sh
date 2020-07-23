@@ -6,10 +6,7 @@ sudo kubeadm reset --force
 
 # Clean up azdata-cli package.
 #
-unalias azdata
-unalias az
 sudo dpkg --remove --force-all azdata-cli
-sudo dpkg --remove --force-all azure-cli
 
 sudo systemctl stop kubelet
 sudo rm -rf /var/lib/cni/
