@@ -331,8 +331,6 @@ azdata arc dc config replace --path azure-arc-custom/control.json --json-values 
 azdata arc dc config replace --path azure-arc-custom/control.json --json-values '$.spec.docker.imageTag=$DOCKER_IMAGE_TAG'
 azdata arc dc config replace --path azure-arc-custom/control.json --json-values '$.spec.docker.imagePullPolicy=IfNotPresent'
 
-export BOOTSTRAPPER_IMAGE=$DOCKER_REGISTRY/$DOCKER_REPOSITORY/arc-bootstrapper:$DOCKER_IMAGE_TAG
-
 azdata arc dc create --name $ARC_DC_NAME --path azure-arc-custom --namespace $CLUSTER_NAME --location $ARC_DC_REGION --resource-group $ARC_DC_RG --subscription $ARC_DC_SUBSCRIPTION --connectivity-mode indirect
 echo "Azure Arc Data Controller cluster created." 
 
