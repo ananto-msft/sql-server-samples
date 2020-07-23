@@ -325,11 +325,11 @@ echo "Starting to deploy azdata cluster..."
 
 # Command to create cluster for single node cluster.
 #
-azdata arc dc config init -s azure-arc-kubeadm-dev-test -t azure-arc-custom --force
-azdata arc dc config replace --config-file azure-arc-custom/control.json --json-values '$.spec.docker.registry=$DOCKER_REGISTRY'
-azdata arc dc config replace --config-file azure-arc-custom/control.json --json-values '$.spec.docker.repository=$DOCKER_REPOSITORY'
-azdata arc dc config replace --config-file azure-arc-custom/control.json --json-values '$.spec.docker.imageTag=$DOCKER_IMAGE_TAG'
-azdata arc dc config replace --config-file azure-arc-custom/control.json --json-values '$.spec.docker.imagePullPolicy=IfNotPresent'
+azdata arc dc config init --source azure-arc-kubeadm-dev-test --path azure-arc-custom --force
+azdata arc dc config replace --path azure-arc-custom/control.json --json-values '$.spec.docker.registry=$DOCKER_REGISTRY'
+azdata arc dc config replace --path azure-arc-custom/control.json --json-values '$.spec.docker.repository=$DOCKER_REPOSITORY'
+azdata arc dc config replace --path azure-arc-custom/control.json --json-values '$.spec.docker.imageTag=$DOCKER_IMAGE_TAG'
+azdata arc dc config replace --path azure-arc-custom/control.json --json-values '$.spec.docker.imagePullPolicy=IfNotPresent'
 
 export BOOTSTRAPPER_IMAGE=$DOCKER_REGISTRY/$DOCKER_REPOSITORY/arc-bootstrapper:$DOCKER_IMAGE_TAG
 
